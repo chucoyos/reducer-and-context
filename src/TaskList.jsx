@@ -22,7 +22,7 @@ function Task({ task, onChange, onDelete }) {
 	let taskContent
 	if (isEditing) {
 		taskContent = (
-			<>
+			<div className='taskContent'>
 				<input
 					value={task.text}
 					onChange={(e) => {
@@ -33,7 +33,7 @@ function Task({ task, onChange, onDelete }) {
 					}}
 				/>
 				<button onClick={() => setIsEditing(false)}>Save</button>
-			</>
+			</div>
 		)
 	} else {
 		taskContent = (
@@ -44,19 +44,21 @@ function Task({ task, onChange, onDelete }) {
 		)
 	}
 	return (
-		<label>
-			<input
-				type='checkbox'
-				checked={task.done}
-				onChange={(e) => {
-					onChange({
-						...task,
-						done: e.target.checked,
-					})
-				}}
-			/>
-			{taskContent}
-			<button onClick={() => onDelete(task.id)}>Delete</button>
-		</label>
+		<div>
+			<label className='taskContent'>
+				<input
+					type='checkbox'
+					checked={task.done}
+					onChange={(e) => {
+						onChange({
+							...task,
+							done: e.target.checked,
+						})
+					}}
+				/>
+				{taskContent}
+				<button onClick={() => onDelete(task.id)}>Delete</button>
+			</label>
+		</div>
 	)
 }

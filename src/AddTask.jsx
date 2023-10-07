@@ -4,7 +4,7 @@ import { useState } from 'react'
 export default function AddTask({ onAddTask }) {
 	const [text, setText] = useState('')
 	return (
-		<>
+		<div className='addTask'>
 			<input
 				placeholder='Add task'
 				value={text}
@@ -18,6 +18,6 @@ export default function AddTask({ onAddTask }) {
 			>
 				Add
 			</button>
-		</>
+		</div>
 	)
 }
