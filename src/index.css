@@ -24,12 +24,12 @@
 .addTask,
 .taskContent {
 	display: flex;
-	gap: 20px;
+	gap: 120px;
 	justify-content: space-between;
 	align-items: center;
 	margin: 20px 0;
 }
-.addTask input {
+.taskInput {
 	width: 100%;
 	padding: 10px;
 	border: none;

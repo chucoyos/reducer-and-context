@@ -24,6 +24,7 @@ function Task({ task, onChange, onDelete }) {
 		taskContent = (
 			<div className='taskContent'>
 				<input
+					className='taskInput'
 					value={task.text}
 					onChange={(e) => {
 						onChange({
