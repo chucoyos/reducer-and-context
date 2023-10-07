@@ -5,7 +5,7 @@ import TaskList from './TaskList.jsx'
 export default function TaskApp() {
 	const [tasks, dispatch] = useReducer(tasksReducer, initialTasks)
 
-	function handleAddTask(text) {
+	const handleAddTask = (text) => {
 		dispatch({
 			type: 'added',
 			id: nextId++,
@@ -13,14 +13,14 @@ export default function TaskApp() {
 		})
 	}
 
-	function handleChangeTask(task) {
+	const handleChangeTask = (task) => {
 		dispatch({
 			type: 'changed',
 			task: task,
 		})
 	}
 
-	function handleDeleteTask(taskId) {
+	const handleDeleteTask = (taskId) => {
 		dispatch({
 			type: 'deleted',
 			id: taskId,
